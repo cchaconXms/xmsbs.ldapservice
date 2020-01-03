@@ -6,10 +6,10 @@ Se debe definir en el **appsettings.json** usando la siguiente estructura:
 
 ```json 
 "LdapConfiguration": {
-    "Url": "",
+    "Url": "{urlAD}",
     "Security": false,
-    "BindDn": "Dn=Dnuser",
-    "BindCredentials": "pwdDnUser",
+    "BindDn": "{rootUser}",
+    "BindCredentials": "{rootPwd}",
     "SearchBase": "DC=AC,DC=LOCAL",
     "SearchFilter": "(&(objectClass=user)(objectClass=person)(sAMAccountName={0}))",
     "Attributes": ["memberOf", "displayName", "sAMAccountName", "userPrincipalName"]
