@@ -16,15 +16,14 @@ Se debe definir en el **appsettings.json** usando la siguiente estructura:
  }
   ```
   
-Se debe definir la configuración en el método **ConfigureServices** de la clase Startup.cs
-
+- Se debe definir la configuración en el método **ConfigureServices** de la clase Startup.cs
+- Ademas agregar el método de extensión que permitira usar el servicio en el contexto de la app
 ```c#
-services.Configure<LdapConfiguration>(Configuration.GetSection("LdapConfiguration"));
-```
-
-Ademas agregar el método de extensión que permitira usar el servicio en el contexto de la app
-```c#
-services.AddLdapService();
+public void ConfigureServices(IServiceCollection services)
+{
+    services.Configure<LdapConfiguration>(Configuration.GetSection("LdapConfiguration"));
+    services.AddLdapService();
+}
 ```
 
 ## Uso de depedencia
